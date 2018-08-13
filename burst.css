@@ -1,0 +1,7 @@
+body{
+    margin: 0;
+    background: #000000;
+}
+#can{
+    border-bottom: #FFFFFF dotted 2px;
+}
