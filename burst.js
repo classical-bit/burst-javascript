@@ -27,4 +27,17 @@ var Bubble = function(x, y, dx, dy, radius){
     }
 }
 
+var bubbles = [];
+for(let i = 0; i < 17; i++){
+    bubbles.push(new Bubble(
+        Math.random() * canvas.width,
+        Math.random() * canvas.height,
+        Math.random() * 2 -1,
+        Math.random() * 5 -2,
+        Math.random() * 20 + 10
+    ));
+}
 
+for(let i = 0; i < 17; i++){
+    bubbles[i].draw();
+}
