@@ -60,9 +60,10 @@ Drop.prototype.draw = function(){
     context.fill();
 }
 Drop.prototype.update = function () {
-    if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
-        this.velocity.y = -this.velocity.y + this.energy_loss
+    if (this.y + this.radius + this.velocity.y > canvas.height || this.y - this.radius < 0) {
+        this.velocity.y = -this.velocity.y + this.energy_loss 
     }else{
+        // gravity acts here
         this.velocity.y += this.gravity;
     }
     if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
@@ -81,8 +82,8 @@ function init() {
     drops = [];
     for (let i = 0; i < 2; i++) {
         bubbles.push(new Bubble(
-            Math.random() * canvas.width,
-            Math.random() * canvas.height,
+            Math.random() * (canvas.width - 60) + 30,
+            Math.random() * (canvas.height - 60) + 30,
             Math.random() * 20 + 10
         ));
     }
